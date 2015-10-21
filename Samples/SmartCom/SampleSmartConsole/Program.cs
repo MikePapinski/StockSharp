@@ -25,13 +25,13 @@ namespace SampleSmartConsole
 				// для теста выбираем бумагу Лукойл
 				const string secCode = "LKOH";
 
-				Console.Write(LocalizedStrings.EnterLogin);
+				Console.Write("{0}: ", LocalizedStrings.EnterLogin);
 				var login = Console.ReadLine();
 
-				Console.Write(LocalizedStrings.EnterPassword);
+				Console.Write("{0}: ", LocalizedStrings.EnterPassword);
 				var password = Console.ReadLine();
 
-				Console.Write("Enter account number through which an order will be placed:".Translate());
+				Console.Write("Enter account number through which an order will be placed: ".Translate());
 				var account = Console.ReadLine();
 
 				using (var waitHandle = new AutoResetEvent(false))
@@ -148,7 +148,7 @@ namespace SampleSmartConsole
 									Volume = 1,
 									Direction = Sides.Buy,
 								};
-								trader.RegisterOrder(order);
+								//trader.RegisterOrder(order);
 								Console.WriteLine(LocalizedStrings.Str1157Params, order.Id);
 								break;
 							}
