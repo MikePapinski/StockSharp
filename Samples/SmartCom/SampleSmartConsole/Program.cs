@@ -37,11 +37,12 @@ namespace SampleSmartConsole
 				using (var waitHandle = new AutoResetEvent(false))
 				{
 					// создаем подключение к Smart-у
-					using (var trader = new SmartTrader { Login = login, Password = password, Address = SmartComAddresses.Demo })
+					using (var trader = new SmartTrader { Login = login, Password = password, Address = SmartComAddresses.Reserve1 })
 					{
-						// подписываемся на событие успешного подключения
-						// все действия необходимо производить только после подключения
-						trader.Connected += () =>
+                        trader.Version = StockSharp.SmartCom.Native.SmartComVersions.V2;
+                        // подписываемся на событие успешного подключения
+                        // все действия необходимо производить только после подключения
+                        trader.Connected += () =>
 						{
 							Console.WriteLine(LocalizedStrings.Str2169);
 

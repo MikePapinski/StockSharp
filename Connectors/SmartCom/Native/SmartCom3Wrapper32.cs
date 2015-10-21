@@ -7,7 +7,7 @@
 	using SmartCOM3_32;
 
 	/// <summary>
-	/// Обертка над SmartCOM 2.X API (32 бита).
+	/// Обертка над SmartCOM 3.X API (32 бита).
 	/// </summary>
 	[CLSCompliant(false)]
 	public class SmartCom3Wrapper32 : SmartComWrapper<StServerClass>
